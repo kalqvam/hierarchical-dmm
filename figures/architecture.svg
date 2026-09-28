@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" width="1100" height="560" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/>
+    </marker>
+    <marker id="arr-light" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a0aec0"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1100" height="560" rx="14" fill="#ffffff"/>
+
+  <!-- column headers -->
+  <g font-size="14" fill="#4a5568" text-anchor="middle">
+    <text x="310" y="46">slow period τ−1</text>
+    <text x="640" y="46">slow period τ</text>
+  </g>
+  <line x1="475" y1="62" x2="475" y2="330" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- row labels -->
+  <g fill="#1a202c">
+    <text x="28" y="116" font-size="16" font-weight="bold" fill="#2b6cb0">Macro</text>
+    <text x="28" y="137" font-size="13" fill="#4a5568">3-dim · monthly</text>
+    <text x="28" y="246" font-size="16" font-weight="bold" fill="#2f855a">Corporate</text>
+    <text x="28" y="267" font-size="13" fill="#4a5568">1-dim · monthly</text>
+    <text x="28" y="406" font-size="16" font-weight="bold" fill="#c05621">Fast</text>
+    <text x="28" y="427" font-size="13" fill="#4a5568">6-dim · daily</text>
+  </g>
+
+  <!-- stubs from period τ−2 -->
+  <g stroke="#a0aec0" stroke-width="1.8" stroke-dasharray="5 4" fill="none" marker-end="url(#arr-light)">
+    <line x1="200" y1="120" x2="284" y2="120"/>
+    <line x1="200" y1="250" x2="284" y2="250"/>
+    <line x1="205" y1="165" x2="290" y2="234"/>
+  </g>
+
+  <!-- edges -->
+  <g stroke="#4a5568" stroke-width="2" fill="none" marker-end="url(#arr)">
+    <!-- macro transition -->
+    <line x1="334" y1="120" x2="614" y2="120"/>
+    <!-- corporate transition -->
+    <line x1="334" y1="250" x2="614" y2="250"/>
+    <!-- previous macro conditions corporate -->
+    <line x1="331" y1="132" x2="617" y2="240"/>
+    <!-- current macro and corporate condition every fast step in the period -->
+    <path d="M660,133 Q790,230 760,343"/>
+    <line x1="640" y1="274" x2="640" y2="343"/>
+    <!-- fast transition -->
+    <line x1="564" y1="410" x2="694" y2="410"/>
+  </g>
+
+  <!-- emissions -->
+  <g stroke="#4a5568" stroke-width="1.6" fill="none" marker-end="url(#arr)">
+    <line x1="293" y1="136" x2="264" y2="160"/>
+    <line x1="623" y1="136" x2="594" y2="160"/>
+    <line x1="293" y1="266" x2="264" y2="290"/>
+    <line x1="623" y1="266" x2="594" y2="290"/>
+    <line x1="540" y1="434" x2="540" y2="462"/>
+    <line x1="720" y1="434" x2="720" y2="462"/>
+  </g>
+
+  <!-- plate: the K fast steps inside period τ -->
+  <rect x="450" y="346" width="380" height="180" rx="10" fill="none" stroke="#c05621" stroke-width="1.5"/>
+  <text x="818" y="516" font-size="12.5" fill="#c05621" text-anchor="end">K = 20 trading days in period τ</text>
+
+  <!-- latent nodes -->
+  <g stroke-width="2.5" fill="#ffffff">
+    <circle cx="310" cy="120" r="24" stroke="#2b6cb0"/>
+    <circle cx="640" cy="120" r="24" stroke="#2b6cb0"/>
+    <circle cx="310" cy="250" r="24" stroke="#2f855a"/>
+    <circle cx="640" cy="250" r="24" stroke="#2f855a"/>
+    <circle cx="540" cy="410" r="24" stroke="#c05621"/>
+    <circle cx="720" cy="410" r="24" stroke="#c05621"/>
+  </g>
+
+  <!-- observed nodes -->
+  <g stroke-width="2">
+    <circle cx="248" cy="174" r="18" fill="#bee3f8" stroke="#2b6cb0"/>
+    <circle cx="578" cy="174" r="18" fill="#bee3f8" stroke="#2b6cb0"/>
+    <circle cx="248" cy="304" r="18" fill="#c6f6d5" stroke="#2f855a"/>
+    <circle cx="578" cy="304" r="18" fill="#c6f6d5" stroke="#2f855a"/>
+    <circle cx="540" cy="482" r="18" fill="#feebc8" stroke="#c05621"/>
+    <circle cx="720" cy="482" r="18" fill="#feebc8" stroke="#c05621"/>
+  </g>
+
+  <!-- node labels -->
+  <g font-size="17" font-style="italic" fill="#1a202c" text-anchor="middle">
+    <text x="306" y="126">s<tspan font-size="11" dy="-8">m</tspan><tspan font-size="10" dx="-4" dy="13">τ−1</tspan></text>
+    <text x="636" y="126">s<tspan font-size="11" dy="-8">m</tspan><tspan font-size="11" dx="-6" dy="13">τ</tspan></text>
+    <text x="306" y="256">s<tspan font-size="11" dy="-8">c</tspan><tspan font-size="10" dx="-4" dy="13">τ−1</tspan></text>
+    <text x="636" y="256">s<tspan font-size="11" dy="-8">c</tspan><tspan font-size="11" dx="-5" dy="13">τ</tspan></text>
+    <text x="536" y="415">f<tspan font-size="11" dy="5">t−1</tspan></text>
+    <text x="715" y="415">f<tspan font-size="11" dy="5">t</tspan></text>
+  </g>
+  <g font-size="13" font-style="italic" fill="#1a202c" text-anchor="middle">
+    <text x="246" y="179">x<tspan font-size="9" dy="-6">m</tspan></text>
+    <text x="576" y="179">x<tspan font-size="9" dy="-6">m</tspan></text>
+    <text x="246" y="309">x<tspan font-size="9" dy="-6">c</tspan></text>
+    <text x="576" y="309">x<tspan font-size="9" dy="-6">c</tspan></text>
+    <text x="538" y="487">x<tspan font-size="9" dy="-6">f</tspan></text>
+    <text x="718" y="487">x<tspan font-size="9" dy="-6">f</tspan></text>
+  </g>
+
+  <!-- legend -->
+  <g font-size="13" fill="#2d3748">
+    <circle cx="884" cy="80" r="11" fill="#ffffff" stroke="#4a5568" stroke-width="2"/>
+    <text x="904" y="85">latent state</text>
+    <circle cx="884" cy="112" r="11" fill="#e2e8f0" stroke="#4a5568" stroke-width="2"/>
+    <text x="904" y="117">observed features</text>
+    <line x1="872" y1="144" x2="898" y2="144" stroke="#4a5568" stroke-width="2" marker-end="url(#arr)"/>
+    <text x="904" y="149">conditional dependency</text>
+    <line x1="872" y1="176" x2="898" y2="176" stroke="#a0aec0" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arr-light)"/>
+    <text x="904" y="181">from period τ−2</text>
+
+    <text x="866" y="226" font-weight="bold" fill="#1a202c">Emission likelihoods</text>
+    <text x="866" y="250"><tspan fill="#2b6cb0" font-weight="bold">macro</tspan>  Normal × 6</text>
+    <text x="866" y="272"><tspan fill="#2f855a" font-weight="bold">corporate</tspan>  Normal × 3</text>
+    <text x="866" y="294"><tspan fill="#c05621" font-weight="bold">fast</tspan>  Student-t × 4</text>
+    <text x="905" y="314">LogNormal × 1</text>
+    <text x="905" y="334">Normal × 1</text>
+
+    <text x="866" y="380" font-weight="bold" fill="#1a202c">Transitions</text>
+    <text x="866" y="402">gated MLPs, each conditioned</text>
+    <text x="866" y="420">on its parent layers</text>
+
+    <text x="866" y="462" font-weight="bold" fill="#1a202c">Inference (guide)</text>
+    <text x="866" y="484">one GRU encoder per layer,</text>
+    <text x="866" y="502">strictly causal: sees only</text>
+    <text x="866" y="520">observations up to t−1</text>
+  </g>
+</svg>

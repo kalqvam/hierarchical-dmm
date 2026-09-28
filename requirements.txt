@@ -1,0 +1,14 @@
+torch
+pyro-ppl
+numpy
+pandas
+scipy
+scikit-learn
+statsmodels
+arch
+pomegranate>=1.0
+matplotlib
+openpyxl
+yfinance
+requests
+jupyter
